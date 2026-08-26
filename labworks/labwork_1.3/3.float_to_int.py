@@ -1,0 +1,5 @@
+num = float(input("Enter a floating-point number: "))
+converted = int(num)
+print("Original float value:", num)
+print("Converted integer value:", converted)
+print("The decimal part is removed when converting float to int.")
