@@ -7,3 +7,6 @@ for i in range(1,51):
 
     elif(i%3==0):
         print(i,"number is divisible by 3")
+
+    else:
+        print("The number Neither divisible by 2 nor 3..")
