@@ -1,4 +1,9 @@
-student = {"name": "Fennie","age": 17, "grade": "A"}
+student = {
+    "name": "Fennie",
+    "age": 17,
+    "grade": "A"
+}
+
 print(student.keys())
 print(student.values())
 student["city"] = "Rajkot"
