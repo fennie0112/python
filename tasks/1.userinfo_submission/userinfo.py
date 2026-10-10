@@ -1,15 +1,18 @@
-print("Welcome to the Interactive Personal Data Collector!",end="\n\n")
+
+print("Welcome to the Interactive Personal Data Collector!", end="\n\n")
 
 yourname = input("Please enter your name: ")
 age = int(input("Please enter your age: "))
 height = float(input("Please enter your height in meters: "))
-fav = int(input("Please enter your favorite number: "))
+fav = int(input("Please enter your favourite number: "))
 
-print("\n\nThank you! Here is the information we collected:")
+print("\nThank you! Here is the information we collected:\n")
 
-print("Name:", yourname,"(type:", type(yourname), ")")
-print("Age:", age,"(type:", type(age), ")")
-print("Height:", height,"(type:", type(height), ")")
-print("Favorite Number:", fav,"(type:", type(fav),")",end="\n\n")
-print("You Birthyear is approximatery :", 2026 - age,"(based on your age:", age, ")", end="\n\n")
-print("Thank you for using the Resonal Data Collector... Goodbye!!")
+print("Name:", yourname, "(Type:", type(yourname), ", Memory Address:", id(yourname), ")")
+print("Age:", age, "(Type:", type(age), ", Memory Address:", id(age), ")")
+print("Height:", height, "(Type:", type(height), ", Memory Address:", id(height), ")")
+print("Favourite Number:", fav, "(Type:", type(fav), ", Memory Address:", id(fav), ")", end="\n\n")
+
+print("Your birth year is approximately:", 2023 - age, "(based on your age of", age, ")\n")
+
+print("Thank you for using the Personal Data Collector. Goodbye!")
