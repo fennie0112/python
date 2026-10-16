@@ -5,7 +5,7 @@ User information
 - print()
 - input()
 - int()
-- string()
+- str()
 - end()
 
 ![output](ss.png)
