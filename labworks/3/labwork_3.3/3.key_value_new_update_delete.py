@@ -1,12 +1,12 @@
-student = {
-    "name": "Fennie",
-    "age": 17,
-    "grade": "A"
+idol = {
+    "name": "Jungkook",
+    "age": 27,
+    "position" : "maknae",
 }
 
-print(student.keys())
-print(student.values())
-student["city"] = "Rajkot"
-student["age"] = 18
-del student["grade"]
-print(student)
+print(idol.keys())
+print(idol.values())
+idol["city"] = "Seoul"
+idol["age"] = 18
+del idol["position"]
+print(idol)
