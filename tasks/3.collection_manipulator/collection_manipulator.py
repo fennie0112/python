@@ -1,159 +1,167 @@
-print("\n\n###########Welcome to the Student Collection Manipulator!#############")
+print("\n########### Welcome to the Student Collection Manipulator! ###########\n")
+
 
 students = [
-    
     {
-      "rollno" : "101",
-      "name"  :  "peter parker",
-      "age"    : "25",
-      "grade"  : "A+",
-      "dob"    : "2001-10-10",
-      "sub"    : "c,python,c++,php"
+        "rollno": "101",
+        "name": "Peter Parker",
+        "age": 25,
+        "grade": "A+",
+        "dob": "2001-10-10",
+        "sub": {"C", "Python", "C++", "PHP"}
     },
 
-
     {
-          "rollno" : "102",
-          "name"  :  "miles morals",
-          "age"    : "27",
-          "grade"  : "A++",
-          "dob"    : "1999-10-03",
-          "sub"    : "c,python,java"
-        }
+        "rollno": "102",
+        "name": "Miles Morales",
+        "age": 27,
+        "grade": "A++",
+        "dob": "1999-10-03",
+        "sub": {"C", "Python", "Java"}
+    }
 ]
 
 
 
 while True:
-
-    print("\n\n1. Add Student")
+    print("\n1. Add Student")
     print("2. Display All Students")
     print("3. Update Student Information")
     print("4. Delete Student")
     print("5. Display Subjects Offered")
     print("6. Exit")
 
-    choice = int(input("Enter your choice: "))
+    choice = int(input("\nEnter your choice: "))
 
-
+    
     if choice == 1:
+        print("\n--- Add Student ---")
 
-         print("\n\n1. Add Student......................")
-         print()
-         print("Add Details of student:-")
-         print()
+        rollno = input("Student ID: ")
+        name = input("Name: ")
+        age = int(input("Age: "))                    
+        grade = input("Grade: ")
+        dob = input("Date of Birth (YYYY-MM-DD): ")
+        subjects = set(input("Subjects (comma-separated): ").split(","))
 
-         student = {
-             "rollno": input("Student ID: "),
-             "name": input("Name: "),
-             "age": int(input("Age: ")),
-             "grade": input("Grade: "),
-             "dob": (input("Date of Birth (YYYY-MM-DD): ")),
-             "sub": set(input("Sub(comma-separated): ").split(",")),
-         }
+        
+        student = {
+            "rollno": rollno,
+            "name": name,
+            "age": age,
+            "grade": grade,
+            "dob": dob,
+            "sub": subjects
+        }
 
-         students.append(student)
+    
+        tuple_info = (rollno, dob)
 
-         print("Student added successfully!")
-         print("_______________________________________________________________________________________________")
-
-
-
-    elif (choice==2):
-
-          print("\n\n2.Display All students.................")
-          print()
-
-
-          for student in students:
-                print("Student ID:", student["rollno"])
-                print("Date of Birth:", student["dob"])
-                print("Name:", student["name"])
-                print("Age:", student["age"])
-                print("Grade:", student["grade"])
-                print("Subjects:", student["sub"])
-                print("_______________________________________________________________________________________________")
-
-    elif(choice==3):
-            print("\n\n3.Update students Information........")
-            print()
-
-            roll = (input(" enter student  ID = "))
-
-            for student in students:
-               if (roll == student["rollno"]):
-
-                 print("<<<<<<<Student Found>>>>>>>")
-
-                 print("\n\n1. Update id")
-                 print("2. Update name")
-                 print("3. Update age")
-                 print("4. Update grade")
-                 print("5. Update dob")
-                 print("6. Update subjects")
-
-                 update = int(input("Enter your choice: "))
-
-                 if update == 1:
-                     student["rollno"] = int(input("Enter new ID: "))
- 
-                 elif update == 2:
-                     student["name"] = input("Enter new name: ")
- 
-                 elif update == 3:
-                     student["age"] = int(input("Enter new age: "))
- 
-                 elif update == 4:
-                     student["grade"] = input("Enter new grade: ")
- 
-                 elif update == 5:
-                     student["dob"] = input("Enter new dob: ")
- 
-                 elif update == 6:
-                     student["sub"] = set(input("Enter new subjects: ").split(","))
- 
-                 else:
-                     print("You Entered Invalid choice ...")
-                     print("Try Again....")
- 
-                 print("Student updated successfully!")
-                 print("______________________________________________________________")
+        students.append(student)                     
+        print("\nStudent added successfully!")
+        print("\n",80*"<")
 
 
+
+    
+    elif choice == 2:
+        print("\n--- Display All Students ---")
+
+        if len(students) == 0:
+            print("No students found.")
+        else:
+            for s in students:
+              print() 
+              print() 
+              print(f"Student ID : {s['rollno']}")
+              print(f"Name       : {s['name']}")
+              print(f"Age        : {s['age']}")
+              print(f"Grade      : {s['grade']}")
+              print(f"Date of Birth: {s['dob']}")
+              print(f"Subjects   : {', '.join(s['sub'])}")
+        print(f"\n",80*"<")
+
+
+    
+    elif choice == 3:
+        print("\n--- Update Student Information ---")
+        roll = input("Enter Student ID: ")
+
+        found = 0
+        for s in students:
+            if (s["rollno"] == roll):
+                found = 1
+                print("\n******Student Found!*******")
+
+                print("1. Update Name")
+                print("2. Update Age")
+                print("3. Update Grade")
+                print("4. Update Subjects")
+               
+
+                choice = int(input("Enter choice: "))
+
+                if (choice == 1):
+                    s["name"] = input("New Name: ")
+                elif (choice == 2):
+                    s["age"] = int(input("New Age: "))
+                elif (choice == 3):
+                    s["grade"] = input("New Grade: ")
+                elif (choice == 4):
+                    s["sub"] = set(input("New Subjects (comma-separated): ").split(","))
+                else:
+                    print("Invalid option!")
+
+                print("******Student updated successfully!******")
+            
+                print(f"\n",80*"<")
+                break
+
+            else:
+                print("!!!!!!!!!!!Student Not Found!!!!!!!!!!!!")
+                print(f"\n",80*"<")
+
+       
+
+    
+   
     elif choice == 4:
-     print("\n\n4.Delete Student........")
-     print()
+        print("\n--- Delete Student ---")
+        roll = input("Enter Student ID: ")
 
-     roll = input("Enter Student ID: ")
+        for i in range(len(students)):
+            if (students[i]["rollno"] == roll):
+                del students[i]
 
-     for student in students:
-        if student["rollno"] == roll:
-            students.remove(student)
-            print("Student deleted successfully!")
-            break
-     else:
-        print("No student found with that ID.")
-        print("_________________________________________________________________")
+                print("Student deleted successfully!")
+                print(f"\n{'<' * 80}")
+                break
+        else:
+            print("Student not found!")
 
 
+  
     elif choice == 5:
-     print("\n\n5.Display Subjects Offered........")
-     print()
-
-     subjects = set()
-     for student in students:
-        subjects.update(student["sub"].split(","))
-
-        for subject in subjects:
-         print(subject)
-     print("___________________________________________________________________")
-
-    elif (choice==6):
-         print("\n\n######That's a wrap! See you next time!######") 
-         break
+        print("\n--- Subjects Offered ---")
+    
+        all_sub = set()
+    
+        for s in students:
+            all_sub.update(s["sub"])
+    
+        print("Unique Subjects:")
+        print()
+        for sub in all_sub:
+            print( sub)
 
 
+    
+    elif choice == 6:
+        print("\n",80*"<")
+        print("\n###### That's a wrap! See you next time! ######")
+        print("\n",80*">")
+        break
 
     else:
-         print("\n\nYou Entered Invalide choice................")
-         break
+        print("\nInvalid choice! Please try again.")
+        print("\n",80*">")
