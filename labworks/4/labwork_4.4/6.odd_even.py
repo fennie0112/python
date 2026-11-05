@@ -4,12 +4,12 @@ arr = []
 for i in range(n):
     arr.append(int(input("Enter number: ")))
 
-print("Even numbers:")
+print("\n\nEven numbers:")
 for x in arr:
     if x % 2 == 0:
         print(x)
 
-print("Odd numbers:")
+print("\n\nOdd numbers:")
 for x in arr:
     if x % 2 != 0:
         print(x)
