@@ -3,15 +3,15 @@
 ## Covered Topics
 -conditions
 -built-in functions
--UDF functions
--1D Array
--2D array
--lambda function
--filter()
--map()
--match case
--jumping statements
-
+- UDF functions
+- 1D Array
+- 2D array
+- lambda function
+- filter()
+- map()
+- match case
+- jumping statements
+ 
 
 ## 1 = Input
 ![output](1.png)
@@ -33,4 +33,6 @@
 
 ## 7 = Exit
 ![output](7.png)
+
+## Alright, coding session over! see you next time!"
 
