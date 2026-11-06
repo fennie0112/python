@@ -15,7 +15,11 @@ while True:
 
     print()
 
+
     choice = input("Enter your choice: ")
+
+
+
 
 
     if (choice == "1"):
@@ -72,6 +76,14 @@ while True:
         print(5*"=","Data entered successfully!",5*"=")
 
 
+
+
+
+
+
+
+
+
     elif (choice == "2"):
         print(80*".")
         print(f"\nGotcha! You selected option {choice}....")
@@ -92,6 +104,12 @@ while True:
                 print("Average:", sum(values) / len(values))
 
             summary(data)
+
+
+
+
+
+
 
 
     elif (choice == "3"):
@@ -116,6 +134,13 @@ while True:
         print("Factorial:", factorial(n))
 
 
+
+
+
+
+
+
+
     elif (choice == "4"):
         print(80*".")
         print(f"\nGotcha! You selected option {choice}....")
@@ -131,6 +156,12 @@ while True:
             my_list = list(filter(lambda x: x >= user_value, data))
 
             print("Filtered data:", my_list)
+
+
+
+
+
+
 
 
     elif (choice == "5"):
@@ -165,6 +196,16 @@ while True:
                 print("Invalid sorting choice!")
 
 
+
+
+
+
+
+
+
+
+
+
     elif (choice == "6"):
         print(80*".")
         print(f"\nGotcha! You selected option {choice}....")
@@ -189,6 +230,11 @@ while True:
             print("Maximum:", maximum)
             print("Sum:", total)
             print("Average:", average)
+
+
+
+
+            
 
 
     elif (choice == "7"):
