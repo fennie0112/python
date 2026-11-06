@@ -1,4 +1,3 @@
-
 print("\n",10*"*","WELCOME TO THE FUNCTIONAL TREAT",10*"*")
 print()
 
@@ -19,10 +18,6 @@ while True:
     choice = input("Enter your choice: ")
 
 
-
-
-
-
     if (choice == "1"):
         print(80*".")
         print(f"\nGotcha! You selected option {choice}....")
@@ -41,6 +36,7 @@ while True:
 
             for value in userdata:
                 data.append(int(value))
+
             print("Display data:", data)
 
 
@@ -51,10 +47,23 @@ while True:
             for i in range(rows):
                 userdata = input(f"Enter row {i+1}: ").split()
 
+                row = []
+
                 for value in userdata:
-                    data.append(int(value))
+                    row.append(int(value))
+
+                data.append(row)
+
+            flat_data = []
+
+            for row in data:
+                for value in row:
+                    flat_data.append(value)
+
+            data = flat_data
+
             print("Display data:", data)
-                
+
 
         else:
             print("Invalid input choice!")
@@ -85,9 +94,6 @@ while True:
             summary(data)
 
 
-
-
-
     elif (choice == "3"):
         print(80*".")
         print(f"\nGotcha! You selected option {choice}....")
@@ -97,7 +103,6 @@ while True:
         def factorial(n):
             if (n < 0 or n == 0 or n == 1):
                 return "Factorial not possible"
-
 
             else:
                 fact = 1
@@ -109,10 +114,6 @@ while True:
 
         n = int(input("Enter a number: "))
         print("Factorial:", factorial(n))
-
-
-
-
 
 
     elif (choice == "4"):
@@ -130,9 +131,6 @@ while True:
             my_list = list(filter(lambda x: x >= user_value, data))
 
             print("Filtered data:", my_list)
-
-
-
 
 
     elif (choice == "5"):
